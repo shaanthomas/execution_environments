@@ -1,0 +1,4 @@
+- hosts: rhel_servers
+  gather_facts: no
+  roles:
+    - rhel8STIG
