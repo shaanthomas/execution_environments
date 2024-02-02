@@ -1,0 +1,16 @@
+---
+name: Podman Image CI for GHCR
+
+on:
+  push
+
+jobs:
+  build_and_publish:
+    #runs-on: rhel-latest
+    steps:
+      #- uses: actions/checkout@v3
+      - name: Build and Publish the Image
+        run: |
+          podman login --username shaanthomas --password ${{ secrets.GH_PAT }}
+          podman build. --tag gh 
+          podman push ghcr.io/shaanthomas/*
